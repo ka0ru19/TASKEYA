@@ -1,25 +1,865 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="oGB-2d-9Dh">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--NEW REQUEST-->
+        <scene sceneID="8jc-WL-T05">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kBo-wn-bHD" customClass="NewPostSecondViewController" customModule="TASKEYA" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="tvd-jM-2zy"/>
+                        <viewControllerLayoutGuide type="bottom" id="vCr-gK-eL7"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                    <view key="view" contentMode="scaleToFill" id="Bvc-MI-McA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="due-gs-gl0">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="知恵求む" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1j-jU-1fr">
+                                <rect key="frame" x="20" y="71" width="280" height="80"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxe-EW-MfL">
+                                <rect key="frame" x="20" y="159" width="280" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="オススメを聞く">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn1Tapped:" destination="kBo-wn-bHD" eventType="touchUpInside" id="tJe-y9-D1H"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cGw-gl-dbt">
+                                <rect key="frame" x="20" y="247" width="280" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="教えてもらう">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn2Tapped:" destination="kBo-wn-bHD" eventType="touchUpInside" id="KVT-qb-14O"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCC-1F-agY">
+                                <rect key="frame" x="20" y="335" width="280" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="アンケート">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn3Tapped:" destination="kBo-wn-bHD" eventType="touchUpInside" id="sgT-Ml-atZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNp-1g-yOA">
+                                <rect key="frame" x="20" y="423" width="280" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="オリジナル">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn4Tapped:" destination="kBo-wn-bHD" eventType="touchUpInside" id="OPT-7y-dwB"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" ya.png" translatesAutoresizingMaskIntoConstraints="NO" id="7aN-mw-RSk">
+                                <rect key="frame" x="274" y="277" width="20" height="20"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" ya.png" translatesAutoresizingMaskIntoConstraints="NO" id="lyI-X3-7Hj">
+                                <rect key="frame" x="274" y="365" width="20" height="20"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" ya.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fd7-wM-88t">
+                                <rect key="frame" x="274" y="453" width="20" height="20"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" ya.png" translatesAutoresizingMaskIntoConstraints="NO" id="XEl-Dj-Bxu">
+                                <rect key="frame" x="274" y="189" width="20" height="20"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="NEW REQUEST" id="1WO-cN-1le"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="r1j-jU-1fr" id="pSJ-W4-8ra"/>
+                        <segue destination="li7-Vt-KRX" kind="push" identifier="toNewPostInputVC" id="kKQ-gc-OTi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bNG-rv-PJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128" y="238"/>
+        </scene>
+        <!--title-->
+        <scene sceneID="dPQ-LS-rjP">
+            <objects>
+                <viewController id="li7-Vt-KRX" customClass="NewPostInputViewController" customModule="TASKEYA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WXq-TA-yBS"/>
+                        <viewControllerLayoutGuide type="bottom" id="zjF-D4-1NT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Re6-ii-8gz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="OwW-ri-c07">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JaS-ox-mzs">
+                                <rect key="frame" x="20" y="72" width="280" height="400"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shC-iN-05W">
+                                        <rect key="frame" x="8" y="258" width="264" height="135"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="写真をアップロード">
+                                            <color key="titleColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="selectButtonTapped:" destination="li7-Vt-KRX" eventType="touchUpInside" id="PtH-sl-y4J"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="タイトルを入力" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z1M-6E-l1R">
+                                        <rect key="frame" x="8" y="8" width="264" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I1m-fX-Bk7">
+                                        <rect key="frame" x="8" y="46" width="264" height="84"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="期限:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wWc-XK-Pom">
+                                        <rect key="frame" x="8" y="138" width="42" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dVG-Yu-n2X">
+                                        <rect key="frame" x="58" y="138" width="214" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qyl-Ai-PeP">
+                                        <rect key="frame" x="58" y="176" width="214" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="お礼:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5b-VX-YSf">
+                                        <rect key="frame" x="8" y="176" width="42" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcN-41-tRZ">
+                                        <rect key="frame" x="8" y="214" width="264" height="30"/>
+                                        <state key="normal" title="位置情報を追加する"/>
+                                        <connections>
+                                            <action selector="placeButtonTapped:" destination="li7-Vt-KRX" eventType="touchUpInside" id="Bnh-ny-ZhF"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPa-bX-l7u">
+                                        <rect key="frame" x="8" y="257" width="264" height="135"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" ya.png" translatesAutoresizingMaskIntoConstraints="NO" id="CgN-fV-weR">
+                                <rect key="frame" x="280" y="486" width="20" height="20"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GUf-GE-sub">
+                                <rect key="frame" x="229" y="478" width="66" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" title="次へ">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="nextButtonTapped:" destination="li7-Vt-KRX" eventType="touchUpInside" id="V6F-Mq-iWe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="title" id="xuX-ZP-P0j"/>
+                    <connections>
+                        <outlet property="limitTextFiled" destination="dVG-Yu-n2X" id="ksP-F5-7hb"/>
+                        <outlet property="postExplain" destination="I1m-fX-Bk7" id="Ufj-Oo-vOE"/>
+                        <outlet property="postImageView" destination="tPa-bX-l7u" id="hhO-1v-Vo0"/>
+                        <outlet property="postTitle" destination="z1M-6E-l1R" id="KEe-tE-TG8"/>
+                        <outlet property="thanksTextField" destination="Qyl-Ai-PeP" id="i8d-dP-xci"/>
+                        <segue destination="gzZ-Wb-EiI" kind="modal" identifier="toMapVC" id="dQZ-dJ-A8r"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgn-JY-ifP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="546" y="-124"/>
+        </scene>
+        <!--Map View Controller-->
+        <scene sceneID="w2g-aJ-CEm">
+            <objects>
+                <viewController id="gzZ-Wb-EiI" customClass="MapViewController" customModule="TASKEYA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0ec-Ng-5aY"/>
+                        <viewControllerLayoutGuide type="bottom" id="gQm-uB-Y2g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="V1z-Ti-RtL">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gfb-T7-mVB">
+                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="HE2-zk-Aru" appends="YES" id="IjV-kd-8sT"/>
+                                </connections>
+                            </mapView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P56-X2-fEH">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <gestureRecognizers/>
+                                <items>
+                                    <navigationItem title="MapView" id="3kM-EZ-qW9">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="bTx-ek-FkE">
+                                            <connections>
+                                                <action selector="showSearchBar:" destination="gzZ-Wb-EiI" id="Z9o-Cy-Tlu"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Qf-l1-KAe">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="LvQ-hl-wcc"/>
+                                    <barButtonItem title="完了" id="5qk-bd-RXN">
+                                        <connections>
+                                            <action selector="doneButtonTapped:" destination="gzZ-Wb-EiI" id="e11-S5-95y"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapTitle" destination="3kM-EZ-qW9" id="mK3-m1-G8H"/>
+                        <outlet property="mapView" destination="Gfb-T7-mVB" id="hQW-Jj-jYJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZRn-fU-ncy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="HE2-zk-Aru">
+                    <connections>
+                        <action selector="mapViewDidTap:" destination="gzZ-Wb-EiI" id="yjR-Jn-Lgx"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="956" y="-352"/>
+        </scene>
+        <!--NEW REQUEST-->
+        <scene sceneID="BD4-2Z-2tD">
+            <objects>
+                <viewController id="cCL-2r-bH5" customClass="NewPostFirstViewController" customModule="TASKEYA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kkf-1b-fXD"/>
+                        <viewControllerLayoutGuide type="bottom" id="XQx-ss-KrX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mvz-MX-hp5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8xN-CU-4C6">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="どんな助けを求めますか" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8NV-tc-bgZ">
+                                <rect key="frame" x="20" y="72" width="280" height="80"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuP-HH-Ldg">
+                                <rect key="frame" x="20" y="160" width="280" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="知恵求む">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn1Tapped:" destination="cCL-2r-bH5" eventType="touchUpInside" id="gem-yR-pus"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" ya.png" translatesAutoresizingMaskIntoConstraints="NO" id="3ES-E8-ES5">
+                                <rect key="frame" x="274" y="190" width="20" height="20"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuR-B7-7fc">
+                                <rect key="frame" x="20" y="248" width="280" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="助け求む">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn2Tapped:" destination="cCL-2r-bH5" eventType="touchUpInside" id="c6k-lC-A32"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" ya.png" translatesAutoresizingMaskIntoConstraints="NO" id="p4J-xe-lB5">
+                                <rect key="frame" x="274" y="278" width="20" height="20"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lw3-Nv-TrJ">
+                                <rect key="frame" x="20" y="336" width="280" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="仲間求む">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn3Tapped:" destination="cCL-2r-bH5" eventType="touchUpInside" id="2rJ-xR-7y4"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" ya.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xie-qo-pjZ">
+                                <rect key="frame" x="274" y="366" width="20" height="20"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AxB-Qi-v9A">
+                                <rect key="frame" x="20" y="424" width="280" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="応援求む">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn4Tapped:" destination="cCL-2r-bH5" eventType="touchUpInside" id="FKl-Ch-NgG"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" ya.png" translatesAutoresizingMaskIntoConstraints="NO" id="cb5-PH-7Zr">
+                                <rect key="frame" x="274" y="454" width="20" height="20"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="NEW REQUEST" id="zN2-6k-Tgb"/>
+                    <connections>
+                        <segue destination="kBo-wn-bHD" kind="push" identifier="toNewPostSecondVC" id="aHM-JE-qun"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LEb-2Q-5tR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-351" y="110"/>
+        </scene>
+        <!--ニーズボード-->
+        <scene sceneID="U8Q-66-gPo">
+            <objects>
+                <navigationController storyboardIdentifier="NeedsBoardNVC" id="Bru-Gd-MU3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="ニーズボード" image="tab_needsboard_F.png" selectedImage="tab_needsboard_T.png" id="R4z-pk-H8k"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fcO-4o-Gmc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Kyb-wv-HJH" kind="relationship" relationship="rootViewController" id="bTN-EK-fDS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c5p-ld-Lcr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-608" y="-1114"/>
+        </scene>
+        <!--NEEDS BOARD-->
+        <scene sceneID="ANj-d3-gXx">
+            <objects>
+                <viewController storyboardIdentifier="NeedsBoardVC" id="Kyb-wv-HJH" customClass="NeedsBoardViewController" customModule="TASKEYA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uEw-mT-qFI"/>
+                        <viewControllerLayoutGuide type="bottom" id="jft-Gu-8iP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tO9-rQ-cf5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="hNR-1t-LNC">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NhV-0j-cln">
+                                <rect key="frame" x="10" y="72" width="300" height="447"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableCell" rowHeight="72" id="6Dg-VZ-JIj">
+                                        <rect key="frame" x="0.0" y="28" width="300" height="72"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6Dg-VZ-JIj" id="idj-OF-PHe">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="71"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DiL-dD-wkz">
+                                                    <rect key="frame" x="8" y="8" width="55" height="55"/>
+                                                </imageView>
+                                                <label opaque="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TitleLabel~~~~~~~~~~~~~~" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOO-eu-dQE">
+                                                    <rect key="frame" x="71" y="8" width="221" height="24"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="3" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="UserName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SoM-gN-ZQu">
+                                                    <rect key="frame" x="71" y="42" width="100" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="4" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="残り88日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3LF-Af-pqj">
+                                                    <rect key="frame" x="179" y="42" width="113" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="NEEDS BOARD" id="r32-j6-Syv"/>
+                    <connections>
+                        <outlet property="table" destination="NhV-0j-cln" id="pwJ-PT-brP"/>
+                        <segue destination="UGR-48-rqc" kind="push" identifier="toFriendsNeedVC" id="LUK-3s-crC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dN8-KH-hMn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-104" y="-1125"/>
+        </scene>
+        <!--FRIEND'S NEED-->
+        <scene sceneID="bko-eh-Tmf">
+            <objects>
+                <viewController id="UGR-48-rqc" customClass="FriendsNeedViewController" customModule="TASKEYA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AN4-3m-Ejp"/>
+                        <viewControllerLayoutGuide type="bottom" id="amT-fu-9zz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Kg-Dy-qry">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HvD-8y-KVx">
+                                <rect key="frame" x="0.0" y="64" width="320" height="171"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="biF-lJ-dqV">
+                                <rect key="frame" x="16" y="200" width="64" height="64"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZg-TU-u65">
+                                <rect key="frame" x="88" y="243" width="232" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mdG-Nz-g42">
+                                <rect key="frame" x="8" y="272" width="304" height="153"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="場所:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5en-oi-VBA">
+                                <rect key="frame" x="20" y="433" width="42" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="期限:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wG8-Ug-DQT">
+                                <rect key="frame" x="20" y="458" width="42" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="お礼:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oQc-bf-bD7">
+                                <rect key="frame" x="20" y="482" width="42" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QqL-bl-fMO">
+                                <rect key="frame" x="70" y="459" width="100" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kW6-8q-eWb">
+                                <rect key="frame" x="70" y="483" width="100" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xD1-bq-fXV">
+                                <rect key="frame" x="201" y="458" width="90" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="応募"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84k-fD-bDa">
+                                <rect key="frame" x="70" y="434" width="100" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="FRIEND'S NEED" id="gle-YH-ftj">
+                        <barButtonItem key="backBarButtonItem" title="Item" id="qaD-LI-4Jz"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="placeLabel" destination="84k-fD-bDa" id="fcG-DQ-Gfj"/>
+                        <outlet property="postImageView" destination="HvD-8y-KVx" id="8Bm-eG-NX5"/>
+                        <outlet property="postTextView" destination="mdG-Nz-g42" id="2EG-Ai-KKI"/>
+                        <outlet property="tanksLabel" destination="kW6-8q-eWb" id="BCI-KI-O7x"/>
+                        <outlet property="timeLabel" destination="QqL-bl-fMO" id="oBV-bv-Sao"/>
+                        <outlet property="userImageView" destination="biF-lJ-dqV" id="WCN-F0-lf1"/>
+                        <outlet property="userNameLabel" destination="BZg-TU-u65" id="jHm-Ek-YMS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kJP-9Q-VyE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="373" y="-1183"/>
+        </scene>
+        <!--通知-->
+        <scene sceneID="5DZ-4V-EYb">
+            <objects>
+                <navigationController id="BJ9-o6-vhD" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="通知" image="tab_notice_F.png" selectedImage="tab_notice_T.png" id="Yog-DT-2lY"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6EA-vB-8IW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="79C-id-Um8" kind="relationship" relationship="rootViewController" id="R8l-9f-I9e"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SL6-4f-97o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-642" y="-466"/>
+        </scene>
+        <!--お知らせ-->
+        <scene sceneID="RiQ-h3-Qb4">
+            <objects>
+                <viewController id="79C-id-Um8" customClass="NoticeBoardViewController" customModule="TASKEYA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="duq-dL-aJS"/>
+                        <viewControllerLayoutGuide type="bottom" id="jZE-29-uNd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="L6j-jb-S24">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="qz5-YI-m3I">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="お知らせ" id="nGk-Nm-KCm"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uXh-TE-TPW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-114" y="-432"/>
+        </scene>
+        <!--(BADGE)-->
+        <scene sceneID="ODf-7q-kvB">
+            <objects>
+                <viewController id="38i-xR-Ykl" customClass="BadgeViewController" customModule="TASKEYA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P6D-CZ-gc3"/>
+                        <viewControllerLayoutGuide type="bottom" id="d61-6I-fAC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Qme-mz-yO7">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="uZ5-jb-ujt">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="(BADGE)" id="F1T-nA-8kO"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wKb-bE-0bN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-302" y="787"/>
+        </scene>
+        <!--バッジ-->
+        <scene sceneID="zNi-Ar-qnA">
+            <objects>
+                <navigationController id="dLN-RT-KWq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="バッジ" image="tab_badge_F.png" selectedImage="tab_badge_T.png" id="mCM-ga-1xX"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ubU-of-XAf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="38i-xR-Ykl" kind="relationship" relationship="rootViewController" id="k1B-Gw-j9N"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HCh-CP-2aD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-802" y="749"/>
+        </scene>
+        <!--マイページ-->
+        <scene sceneID="XFc-MR-0Nv">
+            <objects>
+                <navigationController id="JQ0-sI-FOU" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="マイページ" image="tab_mypage_F.png" selectedImage="tab_mypage_T.png" id="4yJ-Qv-rLm"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Gv9-4s-S5w">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jb6-fT-E6O" kind="relationship" relationship="rootViewController" id="0CW-dH-RLj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rv7-ry-yKJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-802" y="1398"/>
+        </scene>
+        <!--New Registration View Controller-->
+        <scene sceneID="Y0h-Ag-Nn3">
+            <objects>
+                <viewController id="hjE-G5-QaA" customClass="NewRegistrationViewController" customModule="TASKEYA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="L6U-SR-EHM"/>
+                        <viewControllerLayoutGuide type="bottom" id="SH5-AX-hkj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CHp-kT-A73">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F7R-qT-cTa">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="新規登録" id="qng-of-2xh">
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" id="ED8-5l-Mvb"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="I9N-5f-See">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JXh-T0-iud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="98" y="2227"/>
+        </scene>
+        <!--My Page View Controller-->
+        <scene sceneID="crt-78-csc">
+            <objects>
+                <viewController id="jb6-fT-E6O" customClass="MyPageViewController" customModule="TASKEYA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xch-Ae-UrU"/>
+                        <viewControllerLayoutGuide type="bottom" id="42E-1D-taZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Rfg-uZ-vZQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="90c-Mm-mKa">
+                                <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lIQ-Dx-mrv">
+                                <rect key="frame" x="20" y="72" width="60" height="60"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="名前ラベル" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frf-gZ-G9u">
+                                <rect key="frame" x="91" y="72" width="209" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GIVE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKe-HC-DnP">
+                                <rect key="frame" x="91" y="104" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TAKE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFJ-uG-qwx">
+                                <rect key="frame" x="195" y="104" width="41" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLS-KN-ttG">
+                                <rect key="frame" x="20" y="151" width="280" height="60"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TR3-ze-iWD">
+                                <rect key="frame" x="20" y="151" width="280" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="BE BADGE">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" ya.png" translatesAutoresizingMaskIntoConstraints="NO" id="JUL-Hk-KnS">
+                                <rect key="frame" x="274" y="181" width="20" height="20"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhn-fd-CTH">
+                                <rect key="frame" x="20" y="239" width="280" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="CAN BADGE">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" ya.png" translatesAutoresizingMaskIntoConstraints="NO" id="JQg-Lh-05K">
+                                <rect key="frame" x="274" y="269" width="20" height="20"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfg-fP-xNY">
+                                <rect key="frame" x="20" y="327" width="280" height="80"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="基礎情報">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image=" ya.png" translatesAutoresizingMaskIntoConstraints="NO" id="gpV-vr-YBQ">
+                                <rect key="frame" x="274" y="357" width="20" height="20"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vXv-0t-CST">
+                                <rect key="frame" x="130" y="442" width="60" height="30"/>
+                                <state key="normal" title="ログイン"/>
+                                <connections>
+                                    <action selector="btn:" destination="jb6-fT-E6O" eventType="touchUpInside" id="Y8m-ct-5mE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="s4G-A5-URw"/>
+                    <connections>
+                        <segue destination="Dbd-7X-2dI" kind="modal" identifier="toLoginVC" id="Blp-Sc-48X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C4f-Kc-rFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-302" y="1461"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="cHM-ts-Zdk">
+            <objects>
+                <viewController storyboardIdentifier="loginViewController" id="Dbd-7X-2dI" customClass="LoginViewController" customModule="TASKEYA" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="974-T4-R7A"/>
+                        <viewControllerLayoutGuide type="bottom" id="oPj-rU-ZJb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bW1-EW-0Ba">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCa-CO-i7s">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="ログイン" id="X7T-Sg-7Qs">
+                                        <barButtonItem key="backBarButtonItem" title="戻る" id="Bv0-FM-bJd"/>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="wood.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Sd7-Gr-er5">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Adress" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f3o-bs-kHF">
+                                <rect key="frame" x="50" y="162" width="220" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qep-6Y-xd2">
+                                <rect key="frame" x="50" y="200" width="220" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L65-S0-noY">
+                                <rect key="frame" x="78" y="290" width="165" height="30"/>
+                                <state key="normal" title="パスワードを忘れた場合"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1CN-2S-0rZ">
+                                <rect key="frame" x="87" y="417" width="146" height="30"/>
+                                <state key="normal" title="初めての方(新規登録)"/>
+                                <connections>
+                                    <segue destination="hjE-G5-QaA" kind="modal" identifier="toNewRegistration" id="r0v-ne-c70"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="57z-os-mLg">
+                                <rect key="frame" x="130" y="252" width="60" height="30"/>
+                                <state key="normal" title="ログイン"/>
+                                <connections>
+                                    <action selector="loginButtonTapped:" destination="Dbd-7X-2dI" eventType="touchUpInside" id="TnN-my-cnI"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="f3o-bs-kHF" id="KSg-os-GwJ"/>
+                        <outlet property="passwordTextField" destination="qep-6Y-xd2" id="Jzx-kt-TYf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uLe-Xs-CVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-302" y="2227"/>
+        </scene>
+        <!--新しい投稿-->
+        <scene sceneID="sut-4h-8Pd">
+            <objects>
+                <navigationController id="SLw-Uh-OSl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="新しい投稿" image="tab_newrequest_F.png" selectedImage="tab_newrequest_T.png" id="VYb-kT-f1r"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Yza-i1-Md6">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="cCL-2r-bH5" kind="relationship" relationship="rootViewController" id="AOG-DG-vIq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0We-0a-rlR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-796" y="173"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="YDV-kG-W1J">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarVC" id="oGB-2d-9Dh" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" itemPositioning="centered" id="feE-Fh-qnM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Bru-Gd-MU3" kind="relationship" relationship="viewControllers" id="Ojj-29-Dl0"/>
+                        <segue destination="BJ9-o6-vhD" kind="relationship" relationship="viewControllers" id="JGH-FT-BjJ"/>
+                        <segue destination="SLw-Uh-OSl" kind="relationship" relationship="viewControllers" id="pwA-dz-FMg"/>
+                        <segue destination="dLN-RT-KWq" kind="relationship" relationship="viewControllers" id="pQv-kF-Gh5"/>
+                        <segue destination="JQ0-sI-FOU" kind="relationship" relationship="viewControllers" id="nHg-ct-vPI"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DTo-fB-52n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1238" y="17"/>
         </scene>
     </scenes>
+    <resources>
+        <image name=" ya.png" width="48" height="48"/>
+        <image name="tab_badge_F.png" width="30" height="30"/>
+        <image name="tab_badge_T.png" width="30" height="30"/>
+        <image name="tab_mypage_F.png" width="30" height="30"/>
+        <image name="tab_mypage_T.png" width="30" height="30"/>
+        <image name="tab_needsboard_F.png" width="30" height="30"/>
+        <image name="tab_needsboard_T.png" width="30" height="30"/>
+        <image name="tab_newrequest_F.png" width="30" height="30"/>
+        <image name="tab_newrequest_T.png" width="30" height="30"/>
+        <image name="tab_notice_F.png" width="30" height="30"/>
+        <image name="tab_notice_T.png" width="30" height="30"/>
+        <image name="wood.jpg" width="2048" height="1365"/>
+    </resources>
 </document>

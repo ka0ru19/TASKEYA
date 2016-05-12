@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BadgeViewController.swift
 //  TASKEYA
 //
 //  Created by 井上航 on 2016/05/05.
@@ -8,18 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class BadgeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Do any additional setup after loading the view.
+        
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-

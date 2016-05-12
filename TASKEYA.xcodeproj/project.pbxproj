@@ -10,6 +10,9 @@
 		6352888A1CDDB35400D9B68F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635288891CDDB35400D9B68F /* LoginViewController.swift */; };
 		6352888C1CDDB37500D9B68F /* NewRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6352888B1CDDB37500D9B68F /* NewRegistrationViewController.swift */; };
 		6352888E1CDDCBA000D9B68F /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6352888D1CDDCBA000D9B68F /* MapViewController.swift */; };
+		63CAA54F1CE4B9610022D8C0 /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CAA54C1CE4B9610022D8C0 /* smile.png */; };
+		63CAA5531CE4BBD10022D8C0 /* CustomHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CAA5521CE4BBD10022D8C0 /* CustomHeader.swift */; };
+		63CAA5551CE4BBF60022D8C0 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CAA5541CE4BBF60022D8C0 /* CustomCell.swift */; };
 		63D268F51CE04F1200D5E018 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 63D268F41CE04F1200D5E018 /* icon.png */; };
 		63EFE8091CDACC11000D5754 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFE8081CDACC11000D5754 /* AppDelegate.swift */; };
 		63EFE80E1CDACC11000D5754 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63EFE80C1CDACC11000D5754 /* Main.storyboard */; };
@@ -73,6 +76,9 @@
 		635288891CDDB35400D9B68F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		6352888B1CDDB37500D9B68F /* NewRegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewRegistrationViewController.swift; sourceTree = "<group>"; };
 		6352888D1CDDCBA000D9B68F /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		63CAA54C1CE4B9610022D8C0 /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
+		63CAA5521CE4BBD10022D8C0 /* CustomHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomHeader.swift; sourceTree = "<group>"; };
+		63CAA5541CE4BBF60022D8C0 /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		63D268F41CE04F1200D5E018 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		63EFE8051CDACC11000D5754 /* TASKEYA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TASKEYA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		63EFE8081CDACC11000D5754 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +188,7 @@
 			children = (
 				63D268F41CE04F1200D5E018 /* icon.png */,
 				63EFE8711CDAE078000D5754 /* wood.jpg */,
+				63CAA54C1CE4B9610022D8C0 /* smile.png */,
 				63EFE8771CDAF42E000D5754 /* test_image */,
 				63EFE86A1CDAE06C000D5754 /* system_icon */,
 				63EFE8551CDAD969000D5754 /* tab_resized */,
@@ -193,6 +200,8 @@
 				63EFE8381CDACE33000D5754 /* NeedsBoardViewController.swift */,
 				63EFE8861CDAF5C5000D5754 /* FriendsNeedViewController.swift */,
 				63EFE83A1CDACE5A000D5754 /* NoticeBoardViewController.swift */,
+				63CAA5521CE4BBD10022D8C0 /* CustomHeader.swift */,
+				63CAA5541CE4BBF60022D8C0 /* CustomCell.swift */,
 				63EFE83C1CDAD017000D5754 /* BadgeViewController.swift */,
 				63EFE83E1CDAD159000D5754 /* MyPageViewController.swift */,
 				635288891CDDB35400D9B68F /* LoginViewController.swift */,
@@ -405,6 +414,7 @@
 				63EFE8681CDAD969000D5754 /* tab_notice_F.png in Resources */,
 				63EFE8651CDAD969000D5754 /* tab_needsboard_T.png in Resources */,
 				63EFE8841CDAF42E000D5754 /* c06.png in Resources */,
+				63CAA54F1CE4B9610022D8C0 /* smile.png in Resources */,
 				63EFE80E1CDACC11000D5754 /* Main.storyboard in Resources */,
 				63D268F51CE04F1200D5E018 /* icon.png in Resources */,
 				63EFE8631CDAD969000D5754 /* tab_mypage_T.png in Resources */,
@@ -488,6 +498,7 @@
 				63EFE8091CDACC11000D5754 /* AppDelegate.swift in Sources */,
 				63EFE8911CDB41AA000D5754 /* NewPostFirstViewController.swift in Sources */,
 				63EFE88D1CDB29C7000D5754 /* NewPostInputViewController.swift in Sources */,
+				63CAA5551CE4BBF60022D8C0 /* CustomCell.swift in Sources */,
 				63EFE83F1CDAD159000D5754 /* MyPageViewController.swift in Sources */,
 				63EFE83D1CDAD017000D5754 /* BadgeViewController.swift in Sources */,
 				63EFE83B1CDACE5A000D5754 /* NoticeBoardViewController.swift in Sources */,
@@ -496,6 +507,7 @@
 				63EFE8931CDB41B7000D5754 /* NewPostSecondViewController.swift in Sources */,
 				6352888C1CDDB37500D9B68F /* NewRegistrationViewController.swift in Sources */,
 				6352888E1CDDCBA000D9B68F /* MapViewController.swift in Sources */,
+				63CAA5531CE4BBD10022D8C0 /* CustomHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

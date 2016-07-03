@@ -28,8 +28,8 @@ class BadgeViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     // 各cellに値を設定. セルが表示されるときに呼ばれる処理（1個のセルを描画する毎に呼び出されます
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell:CustomCell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! CustomCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell:CustomCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CustomCell
         
         // Section毎にCellのプロパティを変える.
         //        switch(indexPath.section){
@@ -50,20 +50,20 @@ class BadgeViewController: UIViewController, UICollectionViewDelegate, UICollect
         //            cell.backgroundColor = UIColor.whiteColor()
         //        }
         
-        cell.lblSample.text = "ラベル\(indexPath.row)"
+        cell.lblSample.text = "ラベル\((indexPath as NSIndexPath).row)"
         cell.imgSample.image = UIImage(named: "smile.png")
         return cell
     }
     
     // セクションの数（今回は1つだけです => 3）
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 3
     }
     
     /*
      表示するCellの総数を返す
      */
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         // Section毎にCellの総数を変える.
         switch(section){
@@ -86,18 +86,18 @@ class BadgeViewController: UIViewController, UICollectionViewDelegate, UICollect
     /*
      Sectionに値を設定する
      */
-    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         var header: CustomHeader!
-        header = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "header", forIndexPath: indexPath) as! CustomHeader
+        header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header", for: indexPath) as! CustomHeader
         
         header.headerLabel.text = "testtesttest"
-        header.backgroundColor = UIColor.whiteColor()
+        header.backgroundColor = UIColor.white()
         
         return header
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: IndexPath) -> CGSize {
         
         let width: CGFloat = badgeCollectionView.frame.width / 3 - 3
         let height: CGFloat = width

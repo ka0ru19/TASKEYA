@@ -22,13 +22,13 @@ class MyPageViewController: UIViewController {
     }
 
     
-    @IBAction func btn(sender: UIButton) {
-        performSegueWithIdentifier("toLoginVC",sender: nil)
+    @IBAction func btn(_ sender: UIButton) {
+        performSegue(withIdentifier: "toLoginVC",sender: nil)
         
     }
     
     // Segue 準備
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "toLoginVC" {
             print("success")
         }

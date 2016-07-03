@@ -26,12 +26,12 @@ class NewPostSecondViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         // 前のVCで選択されたボタンを元にこのViewにボタンのタイトルを設定
         for i in 0 ..< 4{
         let button: UIButton = view.viewWithTag(i+1) as! UIButton
-        button.setTitle(buttonLabel[displayID-1][i], forState: .Normal)
+        button.setTitle(buttonLabel[displayID-1][i], for: UIControlState())
         }
         
         titleLabel.text = titleArray[displayID-1]
@@ -42,28 +42,28 @@ class NewPostSecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func btn1Tapped(sender: UIButton) {
+    @IBAction func btn1Tapped(_ sender: UIButton) {
         tagNumber2 = 1
-        performSegueWithIdentifier("toNewPostInputVC",sender: nil)
+        performSegue(withIdentifier: "toNewPostInputVC",sender: nil)
     }
     
-    @IBAction func btn2Tapped(sender: UIButton) {
+    @IBAction func btn2Tapped(_ sender: UIButton) {
         tagNumber2 = 2
-        performSegueWithIdentifier("toNewPostInputVC",sender: nil)
+        performSegue(withIdentifier: "toNewPostInputVC",sender: nil)
     }
     
-    @IBAction func btn3Tapped(sender: UIButton) {
+    @IBAction func btn3Tapped(_ sender: UIButton) {
         tagNumber2 = 3
-        performSegueWithIdentifier("toNewPostInputVC",sender: nil)
+        performSegue(withIdentifier: "toNewPostInputVC",sender: nil)
     }
     
-    @IBAction func btn4Tapped(sender: UIButton) {
+    @IBAction func btn4Tapped(_ sender: UIButton) {
         tagNumber2 = 4
-        performSegueWithIdentifier("toNewPostInputVC",sender: nil)
+        performSegue(withIdentifier: "toNewPostInputVC",sender: nil)
     }
     
     // Segue 準備
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "toNewPostInputVC" {
             let nextVC: NewPostInputViewController = (segue.destinationViewController as? NewPostInputViewController)!
             // SubViewController のselectedImgに選択された画像を設定する

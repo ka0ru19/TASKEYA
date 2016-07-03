@@ -24,7 +24,7 @@ struct Post {
     let userName: String
     let userImage: UIImage
     let titleString: String
-    let lastTime: NSDate
+    let lastTime: Date
     
     
 //    init(userName: String, userImage: NSURL?){

@@ -51,7 +51,7 @@
 		63EFE88F1CDB4196000D5754 /* PostCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFE88E1CDB4196000D5754 /* PostCellModel.swift */; };
 		63EFE8911CDB41AA000D5754 /* NewPostFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFE8901CDB41AA000D5754 /* NewPostFirstViewController.swift */; };
 		63EFE8931CDB41B7000D5754 /* NewPostSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63EFE8921CDB41B7000D5754 /* NewPostSecondViewController.swift */; };
-		98287A845702C9051932B9D5 /* Pods_TASKEYA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D76103B14410E0448F1C54 /* Pods_TASKEYA.framework */; };
+		D579464214D81E7FD0C1A483 /* Pods_TASKEYA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D76103B14410E0448F1C54 /* Pods_TASKEYA.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				98287A845702C9051932B9D5 /* Pods_TASKEYA.framework in Frameworks */,
+				D579464214D81E7FD0C1A483 /* Pods_TASKEYA.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -193,13 +193,13 @@
 				63EFE86A1CDAE06C000D5754 /* system_icon */,
 				63EFE8551CDAD969000D5754 /* tab_resized */,
 				63EFE8081CDACC11000D5754 /* AppDelegate.swift */,
+				63EFE8381CDACE33000D5754 /* NeedsBoardViewController.swift */,
+				63EFE83A1CDACE5A000D5754 /* NoticeBoardViewController.swift */,
 				63EFE8901CDB41AA000D5754 /* NewPostFirstViewController.swift */,
 				63EFE8921CDB41B7000D5754 /* NewPostSecondViewController.swift */,
 				63EFE88C1CDB29C7000D5754 /* NewPostInputViewController.swift */,
 				6352888D1CDDCBA000D9B68F /* MapViewController.swift */,
-				63EFE8381CDACE33000D5754 /* NeedsBoardViewController.swift */,
 				63EFE8861CDAF5C5000D5754 /* FriendsNeedViewController.swift */,
-				63EFE83A1CDACE5A000D5754 /* NoticeBoardViewController.swift */,
 				63CAA5521CE4BBD10022D8C0 /* CustomHeader.swift */,
 				63CAA5541CE4BBF60022D8C0 /* CustomCell.swift */,
 				63EFE83C1CDAD017000D5754 /* BadgeViewController.swift */,
@@ -350,21 +350,24 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Wataru Inoue";
 				TargetAttributes = {
 					63EFE8041CDACC11000D5754 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = 44KX7M22LP;
+						LastSwiftMigration = 0800;
 					};
 					63EFE8181CDACC12000D5754 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = CJPA6M3LJM;
+						LastSwiftMigration = 0800;
 						TestTargetID = 63EFE8041CDACC11000D5754;
 					};
 					63EFE8231CDACC12000D5754 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = CJPA6M3LJM;
+						LastSwiftMigration = 0800;
 						TestTargetID = 63EFE8041CDACC11000D5754;
 					};
 				};
@@ -599,7 +602,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "@rpath";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -638,7 +643,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INSTALL_PATH = "@rpath";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				LD_RUNPATH_SEARCH_PATHS = "@loader_path/../Frameworks/";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -649,14 +656,21 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EAA5B3A74065BE87026EC71E /* Pods-TASKEYA.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = TASKEYA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wataru.TASKEYA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -664,14 +678,22 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 119D2F9934D174D2BC55AF29 /* Pods-TASKEYA.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = TASKEYA/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wataru.TASKEYA;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -679,11 +701,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EAA5B3A74065BE87026EC71E /* Pods-TASKEYA.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TASKEYATests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wataru.TASKEYATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TASKEYA.app/TASKEYA";
 			};
 			name = Debug;
@@ -692,11 +716,14 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EAA5B3A74065BE87026EC71E /* Pods-TASKEYA.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = TASKEYATests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wataru.TASKEYATests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TASKEYA.app/TASKEYA";
 			};
 			name = Release;
@@ -708,6 +735,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wataru.TASKEYAUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TASKEYA;
 			};
 			name = Debug;
@@ -719,6 +747,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wataru.TASKEYAUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = TASKEYA;
 			};
 			name = Release;

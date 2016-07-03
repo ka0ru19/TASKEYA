@@ -19,17 +19,17 @@ class NewPostFirstViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
         
     }
     
     func writeToDatabase() {
         
-        let URL = NSURL(string: "https://taskeya.com/final/user/sample2.php")
-        let jsonData :NSData = NSData(contentsOfURL: URL!)!
+        let URL = Foundation.URL(string: "https://taskeya.com/final/user/sample2.php")
+        let jsonData :Data = try! Data(contentsOf: URL!)
         do {
-            let json = try NSJSONSerialization.JSONObjectWithData(jsonData, options: .MutableLeaves) as? NSDictionary
+            let json = try JSONSerialization.jsonObject(with: jsonData, options: .mutableLeaves) as? NSDictionary
             
             // エラーが起こらなければ後続の処理...
             price = json!["LastName"] as! String
@@ -43,7 +43,7 @@ class NewPostFirstViewController: UIViewController {
     }
     
     // メアドとパスでログインしたらユーザー情報を取得
-    func getUserData(mail: String, pass: String) {
+    func getUserData(_ mail: String, pass: String) {
         let requestUrl = "https://taskeya.com/final/user/sample.php?um=" + mail + "&pw=" + pass
         
         Alamofire.request(.GET, requestUrl).responseJSON
@@ -61,29 +61,29 @@ class NewPostFirstViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func btn1Tapped(sender: UIButton) {
+    @IBAction func btn1Tapped(_ sender: UIButton) {
         tagNumber1 = 1
-        performSegueWithIdentifier("toNewPostSecondVC",sender: nil)
+        performSegue(withIdentifier: "toNewPostSecondVC",sender: nil)
     }
     
-    @IBAction func btn2Tapped(sender: UIButton) {
+    @IBAction func btn2Tapped(_ sender: UIButton) {
         tagNumber1 = 2
-        performSegueWithIdentifier("toNewPostSecondVC",sender: nil)
+        performSegue(withIdentifier: "toNewPostSecondVC",sender: nil)
     }
     
-    @IBAction func btn3Tapped(sender: UIButton) {
+    @IBAction func btn3Tapped(_ sender: UIButton) {
         tagNumber1 = 3
-        performSegueWithIdentifier("toNewPostSecondVC",sender: nil)
+        performSegue(withIdentifier: "toNewPostSecondVC",sender: nil)
     }
     
-    @IBAction func btn4Tapped(sender: UIButton) {
+    @IBAction func btn4Tapped(_ sender: UIButton) {
         tagNumber1 = 4
-        performSegueWithIdentifier("toNewPostSecondVC",sender: nil)
+        performSegue(withIdentifier: "toNewPostSecondVC",sender: nil)
     }
     
     
     // Segue 準備
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject!) {
         if segue.identifier == "toNewPostSecondVC" {
             let nextVC: NewPostSecondViewController = (segue.destinationViewController as? NewPostSecondViewController)!
             // SubViewController のselectedImgに選択された画像を設定する

@@ -46,7 +46,7 @@ class MapViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegat
         
         // 承認されていない場合はここで認証ダイアログを表示します.
         let status = CLLocationManager.authorizationStatus()
-        if(status == CLAuthorizationStatus.NotDetermined) {
+        if(status == CLAuthorizationStatus.notDetermined) {
             print("didChangeAuthorizationStatus:\(status)");
             self.myLocationManager.requestAlwaysAuthorization()
         }
@@ -65,7 +65,7 @@ class MapViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegat
     }
     
     // 位置情報取得成功時に呼ばれます
-    func locationManager(manager: CLLocationManager,didUpdateLocations locations: [CLLocation]){
+    func locationManager(_ manager: CLLocationManager,didUpdate locations: [CLLocation]){
         print("緯度：\(manager.location!.coordinate.latitude)")
         print("経度：\(manager.location!.coordinate.longitude)")
         // 初期位置を表示
@@ -78,7 +78,7 @@ class MapViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegat
     
     
     // 位置情報をnavigationBarに表示
-    func displayLocationInfo(placemark: CLPlacemark) {
+    func displayLocationInfo(_ placemark: CLPlacemark) {
         var address: String = ""
         //        address += placemark.country != nil ? placemark.country! : ""
         address += placemark.administrativeArea != nil ? placemark.administrativeArea! : ""
@@ -93,7 +93,7 @@ class MapViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegat
     }
     
     // 位置情報取得失敗時に呼ばれます
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError){
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: NSError){
         print("error:位置情報取得失敗")
     }
     
@@ -102,20 +102,20 @@ class MapViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegat
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func showSearchBar(sender: UIBarButtonItem) {
+    @IBAction func showSearchBar(_ sender: UIBarButtonItem) {
         
         searchController = UISearchController(searchResultsController: nil)
         searchController.hidesNavigationBarDuringPresentation = false
         self.searchController.searchBar.delegate = self
-        presentViewController(searchController, animated: true, completion: nil)
+        present(searchController, animated: true, completion: nil)
         
     }
     
     // Searchボタンが押されたら
-    func searchBarSearchButtonClicked(searchBar: UISearchBar){
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
         //1
         searchBar.resignFirstResponder()
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
         if self.mapView.annotations.count != 0{
             annotation = self.mapView.annotations[0]
             self.mapView.removeAnnotation(annotation)
@@ -124,12 +124,12 @@ class MapViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegat
         localSearchRequest = MKLocalSearchRequest()
         localSearchRequest.naturalLanguageQuery = searchBar.text
         localSearch = MKLocalSearch(request: localSearchRequest)
-        localSearch.startWithCompletionHandler { (localSearchResponse, error) -> Void in
+        localSearch.start { (localSearchResponse, error) -> Void in
             
             if localSearchResponse == nil{
-                let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.Alert)
-                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(alertController, animated: true, completion: nil)
+                let alertController = UIAlertController(title: nil, message: "Place Not Found", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alertController, animated: true, completion: nil)
                 return
             }
             
@@ -164,7 +164,7 @@ class MapViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegat
         }
     }
     
-    func putPin(lat: CLLocationDegrees, _ lon: CLLocationDegrees) {
+    func putPin(_ lat: CLLocationDegrees, _ lon: CLLocationDegrees) {
         // 以前のピンを全削除
         let annotationsToRemove = mapView.annotations.filter { $0 !== mapView.userLocation }
         mapView.removeAnnotations(annotationsToRemove)
@@ -179,10 +179,10 @@ class MapViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegat
     }
     
     // map上をタップで位置を取得
-    @IBAction func mapViewDidTap(sender: UITapGestureRecognizer) {
-        if sender.state == UIGestureRecognizerState.Ended {
-            let tapPoint = sender.locationInView(mapView)
-            let center = mapView.convertPoint(tapPoint, toCoordinateFromView: mapView)
+    @IBAction func mapViewDidTap(_ sender: UITapGestureRecognizer) {
+        if sender.state == UIGestureRecognizerState.ended {
+            let tapPoint = sender.location(in: mapView)
+            let center = mapView.convert(tapPoint, toCoordinateFrom: mapView)
             print("ピン=> 緯度:\(center.latitude) 経度:\(center.longitude)")
             putPin(center.latitude, center.longitude)
             
@@ -206,13 +206,13 @@ class MapViewController: UIViewController, UISearchBarDelegate, MKMapViewDelegat
     }
     
     
-    @IBAction func doneButtonTapped(sender: UIBarButtonItem) {
+    @IBAction func doneButtonTapped(_ sender: UIBarButtonItem) {
         
-        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate: AppDelegate = UIApplication.shared().delegate as! AppDelegate
         appDelegate.placeAdress = mapTitle.title
         appDelegate.placePoint = String(pointAnnotation.coordinate.latitude) + "," + String(pointAnnotation.coordinate.longitude)
         
-        dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
 //    override func viewWillDisappear(animated: Bool) {

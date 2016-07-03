@@ -26,15 +26,15 @@ class NewPostInputViewController: UIViewController, UIImagePickerControllerDeleg
         // Do any additional setup after loading the view.
         navigationItem.title = navigationbarTitle
         
-        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate: AppDelegate = UIApplication.shared().delegate as! AppDelegate
         appDelegate.placeAdress = nil
         appDelegate.placePoint = nil
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         
         super.viewDidDisappear(animated)
-        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate: AppDelegate = UIApplication.shared().delegate as! AppDelegate
         
         print("viewDidAppear")
         if appDelegate.placeAdress != nil {
@@ -46,7 +46,7 @@ class NewPostInputViewController: UIViewController, UIImagePickerControllerDeleg
         
         // mapボタンのタイトルを住所に変更
         let button: UIButton = view.viewWithTag(1) as! UIButton
-        button.setTitle(mapButtonText, forState: .Normal)
+        button.setTitle(mapButtonText, for: UIControlState())
         
     }
 
@@ -55,22 +55,22 @@ class NewPostInputViewController: UIViewController, UIImagePickerControllerDeleg
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func nextButtonTapped(sender: UIButton) {
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
         
 //        postRequest()
     }
     
     func postRequest() {
-        let url = NSURL(string: "https://taskeya.com/final/user/sample.php")
-        let config = NSURLSessionConfiguration.defaultSessionConfiguration()
-        let session = NSURLSession(configuration: config)
-        let req = NSMutableURLRequest(URL: url!)
-        req.HTTPMethod = "POST"
-        req.HTTPBody = "name=Jack".dataUsingEncoding(NSUTF8StringEncoding)
-        let task = session.dataTaskWithRequest(req, completionHandler: {
+        let url = URL(string: "https://taskeya.com/final/user/sample.php")
+        let config = URLSessionConfiguration.default()
+        let session = URLSession(configuration: config)
+        let req = NSMutableURLRequest(url: url!)
+        req.httpMethod = "POST"
+        req.httpBody = "name=Jack".data(using: String.Encoding.utf8)
+        let task = session.dataTask(with: req, completionHandler: {
             (data, resp, err) in
-            print(resp!.URL!)
-            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+            print(resp!.url!)
+            print(NSString(data: data!, encoding: String.Encoding.utf8))
         })
         task.resume()
         
@@ -78,7 +78,7 @@ class NewPostInputViewController: UIViewController, UIImagePickerControllerDeleg
     }
     
     // カメラ、アルバムの呼び出しメソッド(カメラorアルバムのソースタイプが引き数)
-    func precentPickerController(sourceType: UIImagePickerControllerSourceType) {
+    func precentPickerController(_ sourceType: UIImagePickerControllerSourceType) {
         
         // ライブラリが使用できるかどうか判定
         if UIImagePickerController.isSourceTypeAvailable(sourceType) {
@@ -92,34 +92,34 @@ class NewPostInputViewController: UIViewController, UIImagePickerControllerDeleg
             // デリゲートを設定
             picker.delegate = self
             
-            self.presentViewController(picker, animated: true, completion: nil)
+            self.present(picker, animated: true, completion: nil)
         }
     }
     
     // 写真が選択された時に呼び出されるメソッド
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    func imagePickerController(_ picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: NSDictionary!) {
+        self.dismiss(animated: true, completion: nil)
         
         // 画像を出力
         postImageView.image = image
     }
     
     //「画像を取得」ボタンを押した時に呼ばれるメソッド
-    @IBAction func selectButtonTapped(sender: UIButton) {
+    @IBAction func selectButtonTapped(_ sender: UIButton) {
         
         // 選択肢の上に表示するタイトル、メッセージ、アラートタイプの設定
-        let alertController = UIAlertController(title: "画像の取得先を選択", message: nil, preferredStyle: .ActionSheet)
+        let alertController = UIAlertController(title: "画像の取得先を選択", message: nil, preferredStyle: .actionSheet)
         
         // 選択肢の名前と処理を１つずつ設定
-        let firstAction = UIAlertAction(title: "カメラ", style: .Default) {
+        let firstAction = UIAlertAction(title: "カメラ", style: .default) {
             action in
-            self.precentPickerController(.Camera)
+            self.precentPickerController(.camera)
         }
-        let secondAction = UIAlertAction(title: "アルバム", style: .Default) {
+        let secondAction = UIAlertAction(title: "アルバム", style: .default) {
             action in
-            self.precentPickerController(.PhotoLibrary)
+            self.precentPickerController(.photoLibrary)
         }
-        let cancelAction = UIAlertAction(title: "キャンセル", style: .Cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: "キャンセル", style: .cancel, handler: nil)
         
         // 設定した選択肢をアラートに登録
         alertController.addAction(firstAction)
@@ -127,12 +127,12 @@ class NewPostInputViewController: UIViewController, UIImagePickerControllerDeleg
         alertController.addAction(cancelAction)
         
         // アラートを表示
-        presentViewController(alertController, animated: true, completion: nil)
+        present(alertController, animated: true, completion: nil)
     }
 
-    @IBAction func placeButtonTapped(sender: UIButton) {
+    @IBAction func placeButtonTapped(_ sender: UIButton) {
         
-        performSegueWithIdentifier("toMapVC",sender: nil)
+        performSegue(withIdentifier: "toMapVC",sender: nil)
     }
     
     
